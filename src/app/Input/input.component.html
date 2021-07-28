@@ -1,0 +1,22 @@
+<div class="content_wrapper">
+    <p class="titleText">
+        {{pageTitle}}
+    </p>
+    <p>{{pageInstruction}}</p>
+    <div class="input_wrapper">
+        <input type="text" [(ngModel)]="titleTodo" placeholder="enter title"/>
+        <input type="text" [(ngModel)]="textTodo" placeholder="enter todo"/>
+    </div>
+    <button (click)="OnClickedSubmit()">submit</button>
+    
+    <div class="todoList_wrapper">
+       <div class="input_wrapper" *ngFor="let todo of todoList">        
+            <p>{{todo.titleTodo}}</p>
+            <p>{{todo.textTodo}}</p> 
+           <button (click)="OnUpdateStatus(todo)">{{todo.completed ? "finished" : "unfinished"}}</button>
+                        
+    </div> 
+</div>
+  
+    
+    
